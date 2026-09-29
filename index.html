@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Amina & Martin — 14.11.2026</title>
+
+    <meta
+        name="description"
+        content="Nürnberg · İstanbul · Astana — until we meet."
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0b0a0b;
+            color: #eee9e5;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            overflow-x: hidden;
+        }
+
+
+        /* ===============================
+           HERO
+        =============================== */
+
+        .hero {
+            height: 100vh;
+            min-height: 650px;
+
+            position: relative;
+
+            display: flex;
+            align-items: flex-end;
+
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center;
+
+            filter: brightness(.75);
+        }
+
+        .hero-overlay {
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(0,0,0,.15),
+                    rgba(0,0,0,.05) 40%,
+                    rgba(0,0,0,.88) 100%
+                );
+        }
+
+        .hero-content {
+            position: relative;
+
+            width: 100%;
+
+            padding:
+                40px
+                clamp(25px, 7vw, 100px)
+                55px;
+
+            z-index: 2;
+        }
+
+        .hero-small {
+            font-size: 10px;
+
+            letter-spacing: 6px;
+
+            opacity: .75;
+
+            margin-bottom: 25px;
+        }
+
+        .hero-title {
+            font-family: Georgia, serif;
+
+            font-size:
+                clamp(55px, 10vw, 150px);
+
+            line-height: .82;
+
+            font-weight: 400;
+
+            letter-spacing: -5px;
+        }
+
+        .hero-title em {
+            font-weight: normal;
+        }
+
+        .hero-date {
+            margin-top: 35px;
+
+            font-size: 11px;
+
+            letter-spacing: 5px;
+
+            opacity: .8;
+        }
+
+        .hero-corner {
+            position: absolute;
+
+            right: 7%;
+            bottom: 55px;
+
+            font-family: Georgia, serif;
+
+            font-size: 20px;
+
+            font-style: italic;
+
+            line-height: 1.3;
+
+            opacity: .7;
+        }
+
+
+        /* ===============================
+           MAIN
+        =============================== */
+
+        main {
+            position: relative;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    #191719 0%,
+                    #0b0a0b 45%
+                );
+        }
+
+
+        /* ===============================
+           SECTIONS
+        =============================== */
+
+        section {
+            padding:
+                120px
+                clamp(20px, 7vw, 100px);
+        }
+
+        .section-label {
+            text-align: center;
+
+            font-size: 10px;
+
+            letter-spacing: 7px;
+
+            color: #aaa19c;
+
+            text-transform: uppercase;
+
+            margin-bottom: 65px;
+        }
+
+
+        /* ===============================
+           JOURNEY
+        =============================== */
+
+        .journey {
+            max-width: 1150px;
+
+            margin: auto;
+        }
+
+        .route {
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                minmax(100px, 1fr)
+                1fr
+                minmax(100px, 1fr)
+                1fr;
+
+            align-items: center;
+        }
+
+
+        /* CITY */
+
+        .city {
+            text-align: center;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+        .city-image {
+            width: 125px;
+            height: 125px;
+
+            margin: auto;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+
+            border: 1px solid rgba(255,255,255,.7);
+
+            box-shadow:
+                0 0 0 8px rgba(255,255,255,.03);
+
+            background: #181618;
+        }
+
+        .city-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .city-placeholder {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: Georgia, serif;
+
+            color: #888;
+        }
+
+        .city-name {
+            margin-top: 25px;
+
+            font-family: Georgia, serif;
+
+            font-size: 22px;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+        }
+
+        .city-country {
+            margin-top: 10px;
+
+            font-size: 10px;
+
+            letter-spacing: 4px;
+
+            color: #777;
+
+            text-transform: uppercase;
+        }
+
+
+        /* FLIGHT */
+
+        .flight {
+            position: relative;
+
+            height: 80px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .flight-line {
+            width: 100%;
+
+            border-top:
+                1px dashed
+                rgba(255,255,255,.35);
+        }
+
+        .plane {
+            position: absolute;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            font-size: 24px;
+
+            padding: 0 10px;
+
+            background: #0d0c0d;
+        }
+
+        .flight-time {
+            position: absolute;
+
+            top: calc(50% + 24px);
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            white-space: nowrap;
+
+            font-size: 9px;
+
+            color: #777;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* ===============================
+           COUNTDOWN
+        =============================== */
+
+        .countdown-section {
+            text-align: center;
+
+            padding-top: 80px;
+        }
+
+        .countdown-heading {
+            font-family: Georgia, serif;
+
+            font-size:
+                clamp(40px, 6vw, 75px);
+
+            font-weight: 400;
+
+            line-height: 1;
+
+            margin-bottom: 15px;
+        }
+
+        .countdown-subtitle {
+            color: #777;
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 65px;
+        }
+
+        .target-date {
+            font-family: Georgia, serif;
+
+            font-size:
+                clamp(35px, 5vw, 65px);
+
+            letter-spacing: 3px;
+        }
+
+        .target-time {
+            margin-top: 12px;
+
+            font-size: 16px;
+
+            letter-spacing: 7px;
+
+            color: #b9b0aa;
+        }
+
+        .timezone {
+            margin-top: 13px;
+
+            color: #777;
+
+            font-size: 9px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* COUNTDOWN BOXES */
+
+        .timer {
+            max-width: 800px;
+
+            margin: 60px auto 0;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 12px;
+        }
+
+        .timer-box {
+            min-height: 145px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+
+            border-radius: 5px;
+
+            background:
+                rgba(255,255,255,.015);
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transition: .3s;
+        }
+
+        .timer-box:hover {
+            border-color:
+                rgba(255,255,255,.3);
+
+            background:
+                rgba(255,255,255,.035);
+        }
+
+        .timer-number {
+            font-family: Georgia, serif;
+
+            font-size:
+                clamp(42px, 6vw, 70px);
+
+            font-weight: 400;
+
+            line-height: 1;
+        }
+
+        .timer-label {
+            margin-top: 15px;
+
+            font-size: 9px;
+
+            letter-spacing: 4px;
+
+            color: #777;
+
+            text-transform: uppercase;
+        }
+
+
+        /* ===============================
+           DECORATION
+        =============================== */
+
+        .quote {
+            margin: 110px auto 0;
+
+            max-width: 400px;
+
+            text-align: center;
+
+            font-family: Georgia, serif;
+
+            font-size: 21px;
+
+            font-style: italic;
+
+            line-height: 1.5;
+
+            color: #9c9490;
+        }
+
+        .heart {
+            margin-top: 25px;
+
+            font-size: 18px;
+
+            opacity: .7;
+        }
+
+
+        /* ===============================
+           FOOTER
+        =============================== */
+
+        footer {
+            border-top:
+                1px solid
+                rgba(255,255,255,.08);
+
+            padding:
+                30px 7%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            color: #555;
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* ===============================
+           MOBILE
+        =============================== */
+
+        @media(max-width: 700px) {
+
+            .hero {
+                height: 85vh;
+                min-height: 600px;
+            }
+
+            .hero-content {
+                padding-bottom: 40px;
+            }
+
+            .hero-title {
+                letter-spacing: -3px;
+            }
+
+            .hero-corner {
+                display: none;
+            }
+
+            section {
+                padding-top: 90px;
+                padding-bottom: 90px;
+            }
+
+            .route {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .flight {
+                height: 100px;
+                width: 100%;
+
+                flex-direction: column;
+            }
+
+            .flight-line {
+                width: 0;
+                height: 100%;
+
+                border-top: none;
+
+                border-left:
+                    1px dashed
+                    rgba(255,255,255,.35);
+            }
+
+            .plane {
+                transform:
+                    translateY(-50%)
+                    rotate(90deg);
+            }
+
+            .flight-time {
+                left: calc(50% + 28px);
+
+                top: 50%;
+
+                transform:
+                    translateY(-50%);
+            }
+
+            .city-image {
+                width: 105px;
+                height: 105px;
+            }
+
+            .city-name {
+                font-size: 18px;
+            }
+
+            .timer {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 10px;
+            }
+
+            .timer-box {
+                min-height: 120px;
+            }
+
+            .timer-number {
+                font-size: 45px;
+            }
+
+            .target-date {
+                font-size: 35px;
+            }
+
+            .target-time {
+                font-size: 14px;
+            }
+
+            footer {
+                flex-direction: column;
+
+                gap: 15px;
+
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero">
+
+    <!-- Мы -->
+
+    <img
+        class="hero-image"
+        src="images/meet.jpg"
+        alt="Our first meeting"
+    >
+
+    <div class="hero-title"></div>
+
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            Наша первая встреча. Когда мы скажем друг другу:
+        </div>
+
+        <h1 class="hero-title">
+            Наконец-то<br>
+            <em>мы</em><br>
+            встретились...
+        </h1>
+
+        <div class="hero-date">
+            14 NOVEMBER 2026 · ASTANA
+        </div>
+
+    </div>
+
+
+    <div class="hero-corner">
+        Увидимся<br>
+        скоро, мой любимый ♡
+    </div>
+
+</section>
+
+
+
+<main>
+
+
+<!-- =========================================
+     JOURNEY
+========================================= -->
+
+<section>
+
+    <div class="journey">
+
+        <div class="section-label">
+            Твой путь
+        </div>
+
+
+        <div class="route">
+
+
+            <!-- NÜRNBERG -->
+
+            <div class="city">
+
+                <div class="city-image">
+
+                    <div class="city-placeholder">
+                        1
+                    </div>
+
+                </div>
+
+                <div class="city-name">
+                    Nürnberg
+                </div>
+
+                <div class="city-country">
+                    Germany
+                </div>
+
+            </div>
+
+
+            <!-- FLIGHT 1 -->
+
+            <div class="flight">
+
+                <div class="flight-line"></div>
+
+                <div class="plane">
+                    ✈
+                </div>
+
+                <div class="flight-time">
+                    ~ 2h 45m
+                </div>
+
+            </div>
+
+
+            <!-- ISTANBUL -->
+
+            <div class="city">
+
+                <div class="city-image">
+
+                    <div class="city-placeholder">
+                        2
+                    </div>
+
+                </div>
+
+                <div class="city-name">
+                    İstanbul
+                </div>
+
+                <div class="city-country">
+                    Türkiye
+                </div>
+
+            </div>
+
+
+            <!-- FLIGHT 2 -->
+
+            <div class="flight">
+
+                <div class="flight-line"></div>
+
+                <div class="plane">
+                    ✈
+                </div>
+
+                <div class="flight-time">
+                    ~ 5h
+                </div>
+
+            </div>
+
+
+            <!-- ASTANA -->
+
+            <div class="city">
+
+                <div class="city-image">
+
+                    <div class="city-placeholder">
+                        3
+                    </div>
+
+                </div>
+
+                <div class="city-name">
+                    Astana
+                </div>
+
+                <div class="city-country">
+                    Kazakhstan
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     COUNTDOWN
+========================================= -->
+
+<section class="countdown-section">
+
+    <div class="section-label">
+        Осталось времени до нашей встречи всего...
+    </div>
+
+
+    <h2 class="countdown-heading">
+        14.11.2026
+    </h2>
+
+
+    <div class="target-time">
+        03:35
+    </div>
+
+
+    <div class="timezone">
+        Astana time · UTC+5
+    </div>
+
+
+    <!-- TIMER -->
+
+    <div class="timer">
+
+
+        <div class="timer-box">
+
+            <div
+                class="timer-number"
+                id="days"
+            >
+                00
+            </div>
+
+            <div class="timer-label">
+                Days
+            </div>
+
+        </div>
+
+
+        <div class="timer-box">
+
+            <div
+                class="timer-number"
+                id="hours"
+            >
+                00
+            </div>
+
+            <div class="timer-label">
+                Hours
+            </div>
+
+        </div>
+
+
+        <div class="timer-box">
+
+            <div
+                class="timer-number"
+                id="minutes"
+            >
+                00
+            </div>
+
+            <div class="timer-label">
+                Minutes
+            </div>
+
+        </div>
+
+
+        <div class="timer-box">
+
+            <div
+                class="timer-number"
+                id="seconds"
+            >
+                00
+            </div>
+
+            <div class="timer-label">
+                Seconds
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="quote">
+
+        Однажды два сердца<br>
+        Два человека<br>
+        Встретятся в один день<br>
+        Любовь станет еще сильнее...
+
+        <div class="heart">
+            ♡
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     COUNTDOWN JAVASCRIPT
+========================================= -->
+
+<script>
+
+    /*
+        14 November 2026
+        03:35 Astana time
+
+        Astana = UTC+5
+
+        Therefore:
+        03:35 Astana
+        =
+        22:35 UTC
+        on 13 November 2026
+    */
+
+    const meetingDate =
+        new Date(
+            "2026-11-13T22:35:00Z"
+        ).getTime();
+
+
+    function updateCountdown() {
+
+        const now =
+            Date.now();
+
+
+        const distance =
+            meetingDate - now;
+
+
+        /*
+            Если время встречи наступило
+        */
+
+        if (distance <= 0) {
+
+            document.getElementById("days")
+                .textContent = "00";
+
+            document.getElementById("hours")
+                .textContent = "00";
+
+            document.getElementById("minutes")
+                .textContent = "00";
+
+            document.getElementById("seconds")
+                .textContent = "00";
+
+            document.querySelector(".countdown-heading")
+                .textContent = "WE FINALLY MET";
+
+            document.querySelector(".target-time")
+                .textContent = "03:35";
+
+            return;
+        }
+
+
+        /*
+            Расчёт времени
+        */
+
+        const days =
+            Math.floor(
+                distance /
+                (1000 * 60 * 60 * 24)
+            );
+
+
+        const hours =
+            Math.floor(
+                (distance /
+                (1000 * 60 * 60))
+                % 24
+            );
+
+
+        const minutes =
+            Math.floor(
+                (distance /
+                (1000 * 60))
+                % 60
+            );
+
+
+        const seconds =
+            Math.floor(
+                (distance / 1000)
+                % 60
+            );
+
+
+        /*
+            Вывод
+        */
+
+        document.getElementById("days")
+            .textContent =
+            String(days).padStart(2, "0");
+
+
+        document.getElementById("hours")
+            .textContent =
+            String(hours).padStart(2, "0");
+
+
+        document.getElementById("minutes")
+            .textContent =
+            String(minutes).padStart(2, "0");
+
+
+        document.getElementById("seconds")
+            .textContent =
+            String(seconds).padStart(2, "0");
+
+    }
+
+
+    updateCountdown();
+
+
+    setInterval(
+        updateCountdown,
+        1000
+    );
+
+</script>
+
+
+</body>
+</html>
